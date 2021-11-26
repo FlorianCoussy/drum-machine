@@ -20,19 +20,9 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'sass-loader'
-          }
+          'style-loader',   // inject CSS to page
+          'css-loader',     // translates CSS into CommonJS modules
+          'sass-loader'     // compiles Sass to CSS
         ]
       }
     ]
