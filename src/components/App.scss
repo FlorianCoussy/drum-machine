@@ -1,9 +1,84 @@
 @import "~bootstrap/scss/bootstrap";
 
+$grey-1: #0A0A0B;
+$grey-2: #131416;
+$grey-3: #1D1E20;
+$grey-4: #242629;
+$grey-5: #303236;
+$grey-6: #3A3C41;
+$grey-7: #515151;
+$grey-8: #B2B2B2;
+$white: #f5f5f5;
+
 #root {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(
+    $grey-6 0%,
+    $grey-5 20%,
+    $grey-4 40%,
+    $grey-3 60%,
+    $grey-2 80%,
+    $grey-1 100%
+  );
+  background-color: $grey-4;
+  color: $white;
+}
+
+h1 {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+#drum-machine {
+  width: 700px;
+  perspective: 150em;
+  
+  &:hover #display {
+    transform: rotate(0);
+    transition: .4s;
+  }
+  
+  #display {
+    height: 500px;
+    border-top: 1px solid $grey-8;
+    border-right: 1px solid $grey-5;
+    border-bottom: 1px solid $grey-8;
+    border-left: 1px solid $grey-5;
+    background: linear-gradient(-30deg, $grey-2, $grey-7);
+    // transform: rotate3d(0, 1, -0.2, 30deg);
+    transform-style: preserve-3d;
+    transition: .4s;
+  
+    .drum-pad {
+      display: none;
+    }
+  }
+
+  #top, #left {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 0;
+  }
+  
+  #top {
+    width: 700px;
+    height: 60px;
+    top: -3.8em;
+    border: 1px solid black;
+    background-color: black;
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+
+  #left {
+    width: 60px;
+    height: 500px;
+    left: -3.8em;
+    border: 1px solid black;
+    background-color: black;;
+  }
 }
