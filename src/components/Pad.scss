@@ -1,0 +1,8 @@
+@import "../constants.scss";
+
+#pad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $height;
+}
