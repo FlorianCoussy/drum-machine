@@ -2,7 +2,55 @@
 
 #controls {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: $height;
+  padding-left: 15px;
+
+  > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #logo, #io, .bank {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #logo {
+    font-weight: bold;
+    transform: scale(1, 1.2);
+  }
+  
+  #io button {
+    height: 50px;
+    width: 60px;
+    cursor: pointer;
+  }
+  
+  #pad-name-display, #volume-slider {
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  #pad-name-display {
+    border: 1px solid red;
+  }
+
+  #volume-slider {
+    margin-bottom: 30px;
+    border: 1px solid red;
+  }
+
+  .bank button {
+    height: 50px;
+    width: 80px;
+    cursor: pointer;
+  }
 }

@@ -12,10 +12,10 @@ const App = () => {
           <div id="display" className="box-face box-face-front">
             <div className="container">
               <div className="row">
-                <div className="col">
+                <div className="col-4">
                   <Controls />
                 </div>
-                <div className="col">
+                <div className="col-8">
                   <Pad />
                 </div>
               </div>
