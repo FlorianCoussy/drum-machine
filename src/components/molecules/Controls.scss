@@ -1,4 +1,4 @@
-@import "../constants.scss";
+@import "../../constants.scss";
 
 #controls {
   display: flex;
@@ -23,13 +23,7 @@
   
   #logo {
     font-weight: bold;
-    transform: scale(1, 1.2);
-  }
-  
-  #io button {
-    height: 50px;
-    width: 60px;
-    cursor: pointer;
+    transform: scale(1, 1.25);
   }
   
   #pad-name-display, #volume-slider {
@@ -40,17 +34,16 @@
   }
 
   #pad-name-display {
-    border: 1px solid red;
+    border: 1px solid $grey-3;
   }
 
   #volume-slider {
     margin-bottom: 30px;
-    border: 1px solid red;
+    border: 1px solid $grey-3;
   }
 
   .bank button {
     height: 50px;
     width: 80px;
-    cursor: pointer;
   }
 }

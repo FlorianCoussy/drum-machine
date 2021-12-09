@@ -1,25 +1,24 @@
 import React from 'react';
+import IOButton from '../atoms/IOButton';
 import './Controls.scss';
 
 const Controls = () => (
   <div id="controls">
     <div>
       <div id="logo">&copy; MASCHINE</div>
-      <div id="io">
-        <button>I/O</button>
-      </div>
+      <IOButton />
     </div>
     <div id="pad-name-display">Pad Name Display</div>
     <div id="volume-slider">Volume Slider</div>
     <div>
       <div className="bank">
         <button>
-          Bank 1
+          <span>Bank 1</span>
         </button>
       </div>
       <div className="bank">
         <button>
-          Bank 2
+          <span>Bank 2</span>
         </button>
       </div>
     </div>

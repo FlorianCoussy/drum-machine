@@ -1,6 +1,6 @@
 import React from 'react';
-import Controls from './Controls';
-import Pad from './Pad';
+import Controls from './molecules/Controls';
+import Pad from './molecules/Pad';
 import './App.scss';
 
 const App = () => {
