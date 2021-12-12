@@ -1,0 +1,8 @@
+@import "../../constants.scss";
+
+#volume-slider {
+  margin-bottom: 30px;
+  #slider {
+    border: 1px solid $grey-3;
+  }
+}

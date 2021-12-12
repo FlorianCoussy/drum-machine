@@ -1,5 +1,7 @@
 import React from 'react';
 import IOButton from '../atoms/IOButton';
+import PadNameDisplay from '../atoms/PadNameDisplay';
+import VolumeSlider from '../atoms/VolumeSlider';
 import './Controls.scss';
 
 const Controls = () => (
@@ -8,8 +10,8 @@ const Controls = () => (
       <div id="logo">&copy; MASCHINE</div>
       <IOButton />
     </div>
-    <div id="pad-name-display">Pad Name Display</div>
-    <div id="volume-slider">Volume Slider</div>
+    <PadNameDisplay />
+    <VolumeSlider />
     <div>
       <div className="bank">
         <button>

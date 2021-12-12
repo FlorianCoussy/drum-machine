@@ -28,18 +28,7 @@
   
   #pad-name-display, #volume-slider {
     height: 50px;
-    justify-content: center;
-    align-items: center;
     margin-top: 30px;
-  }
-
-  #pad-name-display {
-    border: 1px solid $grey-3;
-  }
-
-  #volume-slider {
-    margin-bottom: 30px;
-    border: 1px solid $grey-3;
   }
 
   .bank button {
