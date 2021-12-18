@@ -12,7 +12,7 @@ const Controls = () => (
     </div>
     <PadNameDisplay />
     <VolumeSlider />
-    <div>
+    <div className="banks">
       <div className="bank">
         <button>
           <span>Bank 1</span>

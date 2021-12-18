@@ -29,11 +29,11 @@
     height: 30px;
     border-top: 3px solid $grey-2;
     border-right: 15px solid $grey-3;
-    border-bottom: 3px solid $grey-7;
-    border-left: 15px solid $grey-4;
+    border-bottom: 3px solid $grey-6;
+    border-left: 15px solid $grey-3;
     border-radius: 2px;
-    box-shadow: inset 0 0 1px $grey-4,
-                0 0 1px $grey-4;
+    box-shadow: inset 0 0 1px $grey-3,
+                0 0 1px $grey-3;
 
     input {
       position: relative;
@@ -50,8 +50,8 @@
         border: none;
         border-radius: 2px;
         background: $grey-3;
-        box-shadow: 0 1px 1px $grey-4,
-                    inset 0 1px 1px $grey-6;
+        box-shadow: 0 2px 2px hsla(0, 0%, 0%, .5),
+                    inset 0 1px 1px hsla(0, 0%, 100%, .25);
       }
 
       &:hover {

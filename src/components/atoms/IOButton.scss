@@ -5,7 +5,8 @@
   width: 60px;
 
   span {
-    left: 3px;
+    left: 5px;
+    color: $grey-7;
     
     svg {
       position: relative;
@@ -13,12 +14,8 @@
       margin-right: 1px;
     }
 
-    &.play {
+    &.active {
       color: $green;
-    }
-
-    &.stop {
-      color: $red;
     }
   }
 }
