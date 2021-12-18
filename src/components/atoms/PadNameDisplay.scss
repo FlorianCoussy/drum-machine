@@ -6,10 +6,17 @@
   font-family: monospace;
   font-size: .8rem;
   font-weight: 600;
-  background-color: $grey-6;
-  box-shadow: 0 0 1px 1px $grey-1,
-              inset 0 0 1px 1px $grey-7;
-
+  background-color: $grey-5;
+  box-shadow: 0 0 1px 1px hsla(0, 0%, 0%, .5),
+              inset 0 0 1px 1px hsla(0, 0%, 0%, .2);
+  transition: background-color 1s, box-shadow 1s;
+  
+  #pad-key,
+  #pad-name {
+    opacity: 0;
+    transition: opacity .6s;
+  }
+  
   #pad-key {
     margin-right: 10px;
     padding: 5px 10px;
@@ -21,5 +28,17 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  &.active {
+    background-color: $grey-6;
+    box-shadow: 0 0 1px 1px hsla(0, 0%, 0%, .5),
+                inset 0 0 1px 1px hsla(0, 0%, 100%, .2);
+
+    #pad-key,
+    #pad-name {
+      opacity: 1;
+      transition: opacity 1.4s;
+    }
   }
 }

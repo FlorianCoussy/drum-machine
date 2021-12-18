@@ -15,7 +15,7 @@ const Controls = () => {
         <div id="logo">&copy; MASCHINE</div>
         <IOButton isTurnedOn={isTurnedOn} handleClick={handleIOButtonClick} />
       </div>
-      <PadNameDisplay />
+      <PadNameDisplay isTurnedOn={isTurnedOn} />
       <VolumeSlider />
       <div className="banks">
         <div className="bank">
