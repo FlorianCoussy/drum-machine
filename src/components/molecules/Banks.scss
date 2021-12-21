@@ -1,0 +1,14 @@
+@import '../../constants.scss';
+
+#banks {
+  .bank button {
+    height: 50px;
+    width: 80px;
+    color: $grey-7;
+    transition: color .2s;
+
+    &.active {
+      color: $white;
+    }
+  }
+}
