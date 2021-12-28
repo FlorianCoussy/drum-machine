@@ -2,52 +2,72 @@
 
 #pad {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   height: $height;
+  padding: 16px 0;
 
   .drum-pad button {
-    width: 100%;
+    width: 125px;
     height: 125px;
     margin: 10px;
-    color: #303030;
     font: bold 40px sans-serif;
-    text-shadow: 0 1px 1px hsla(0,0%,100%,.25),
-                 0 -1px 1px hsla(0,0%,0%,.75);
-    box-shadow: inset 0 0 2px 2px hsla(0, 0%, 0%, .2),
-                inset 0 0 2px 4px hsla(0, 0%, 0%, .2),
-                inset 0 0 2px 6px hsla(0, 0%, 0%, .2),
-                inset 0 0 1px 8px hsla(0, 0%, 0%, .5),
-                inset 0 -4px 2px 4px hsla(0, 0%, 0%, .5),
-                inset 0 1px 1px 8px hsla(0, 0%, 100%, .25),
+    color: $grey-8;
+    background: radial-gradient($white 0%, $grey-8 100%);
+    text-shadow: 0 1px 1px hsla(0, 0%, 100%, .25),
+                 0 -1px 1px hsla(0, 0%, 25%, .75);
+    box-shadow: inset 0 0 1px 2px hsla(0, 0%, 0%, .2),
+                inset 0 0 1px 4px hsla(0, 0%, 0%, .2),
+                inset 0 0 1px 6px hsla(0, 0%, 0%, .5),
+                inset 0 -2px 1px 2px hsla(0, 0%, 0%, .5),
                 inset 0 -30px 30px hsla(0, 0%, 0%, .2),
-                0 -4px 8px 4px hsla(0, 0%, 0%, .5),
-                0 10px 10px hsla(0, 0%, 0%, .25),
-                0 0 2px 2px hsla(0, 0%, 0%, .2),
-                0 0 2px 4px hsla(0, 0%, 0%, .2),
-                0 0 2px 6px hsla(0, 0%, 0%, .2),
-                0 0 2px 8px hsla(0, 0%, 0%, .5),
-                0 1px 2px 8px hsla(0,0%,100%,.25),
-                0 -1px 2px 8px hsla(0,0%,0%,.5);
+                0 -2px 2px 2px hsla(0, 0%, 2%, .5),
+                0 3px 3px hsla(0, 0%, 2%, .25),
+                0 0 2px 1px hsla(0, 0%, 2%, .2),
+                0 0 2px 2px hsla(0, 0%, 2%, .5),
+                0 1px 1px 2px hsla(0, 0%, 100%, .25);
 
     &:active {
-      box-shadow: inset 0 0 2px 2px hsla(0,0%,0%,.2),
-                  inset 0 0 2px 4px hsla(0,0%,0%,.2),
-                  inset 0 0 2px 6px hsla(0,0%,0%,.2),
-                  inset 0 0 1px 7px hsla(0,0%,0%,.5),
-                  inset 0 5px 15px 7px hsla(0,0%,0%,.15),
-                  inset 0 -4px 2px 3px hsla(0,0%,0%,.5),
-                  inset 0 1px 1px 7px hsla(0,0%,100%,.25),
-                  inset 0 -30px 30px hsla(0,0%,0%,.1),
-                  inset 0 30px 30px hsla(0,0%,0%,.2),
-                  0 -4px 8px 4px hsla(0,0%,0%,.5),
-                  0 5px 10px hsla(0,0%,0%,.25),
-                  0 0 2px 2px hsla(0,0%,0%,.2),
-                  0 0 2px 4px hsla(0,0%,0%,.2),
-                  0 0 2px 6px hsla(0,0%,0%,.2),
-                  0 0 2px 8px hsla(0,0%,0%,.5),
-                  0 1px 2px 8px hsla(0,0%,100%,.25),
-                  0 -1px 2px 8px hsla(0,0%,0%,.5);
+      box-shadow: inset 0 0 1px 2px hsla(0, 0%, 0%,.2),
+                  inset 0 0 1px 4px hsla(0, 0%, 0%,.2),
+                  inset 0 0 1px 7px hsla(0, 0%, 0%,.5),
+                  inset 0 5px 15px 7px hsla(0, 0%, 0%,.15),
+                  inset 0 -4px 2px 3px hsla(0, 0%, 0%,.5),
+                  inset 0 -30px 30px hsla(0, 0%, 0%, .1),
+                  inset 0 30px 30px hsla(0, 0%, 0%, .2),
+                  0 -2px 2px 2px hsla(0, 0%, 2%, .5),
+                  0 1px 3px hsla(0, 0%, 2%, .25),
+                  0 0 2px 1px hsla(0, 0%, 2%, .2),
+                  0 0 2px 2px hsla(0, 0%, 2%, .5),
+                  0 1px 1px 2px hsla(0, 0%, 100%, .25);
+      
+      span {
+        top: 1px;
+      }
+    }
+
+    &.active {
+      &.cyan {
+        color: $cyan-2;
+        background: radial-gradient($cyan-2 0%, $cyan-1 66%);
+      }
+
+      &.purple {
+        color: $purple-2;
+        background: radial-gradient($purple-2 0%, $purple-1 66%);
+      }
+
+      &.blue {
+        color: $blue-2;
+        background: radial-gradient($blue-2 0%, $blue-1 66%);
+      }
+    }
+
+    span {
+      position: inherit;
+      top: auto;
+      left: auto;
+      font-size: inherit;
+      font-weight: inherit;
     }
   }
 }
