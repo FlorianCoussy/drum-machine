@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Controls from './molecules/Controls';
 import Pad from './molecules/Pad';
+import banksData from '../constants';
 import './App.scss';
 
 const App = () => {
+  const [isTurnedOn, setIsTurnedOn] = useState(false);
+  const [banks, setBanks] = useState(banksData);
+  const [currentKey, setCurrentKey] = useState(undefined);
+
+  const handleIOButtonClick = () => setIsTurnedOn(!isTurnedOn);
+
+  const handleBanksClick = (bankId) => {
+    const updatedBanks = banks.map(bank => {
+      return {
+        ...bank,
+        isActive: isTurnedOn && bank.id === bankId,
+      };
+    });
+    setBanks(updatedBanks);
+  };
+
+  useEffect(() => {
+    const updatedBanks = banks.map(bank => {
+      return {
+        ...bank,
+        isActive: isTurnedOn && bank.id === 0,
+      };
+    });
+    setBanks(updatedBanks);
+  }, [isTurnedOn]);
+
   return (
     <div>
       <h1>Drum Maschine</h1>
@@ -13,10 +40,19 @@ const App = () => {
             <div className="container">
               <div className="row">
                 <div className="col-4">
-                  <Controls />
+                  <Controls
+                    isTurnedOn={isTurnedOn}
+                    banks={banks}
+                    currentKey={currentKey}
+                    handleIOButtonClick={handleIOButtonClick}
+                    handleBanksClick={handleBanksClick}
+                  />
                 </div>
                 <div className="col-8">
-                  <Pad />
+                  <Pad
+                    isTurnedOn={isTurnedOn}
+                    banks={banks}
+                  />
                 </div>
               </div>
             </div>
