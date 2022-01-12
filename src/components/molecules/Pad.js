@@ -1,66 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './Pad.scss';
 
-const Pad = () => (
-  <div id="pad">
-    <div id="key-Q" className="drum-pad">
-      <button className="cyan">
-        <span>Q</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
-    <div id="key-W" className="drum-pad">
-      <button className="cyan">
-        <span>W</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
-    <div id="key-E" className="drum-pad">
-      <button className="cyan">
-        <span>E</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
+const Pad = ({ isTurnedOn, banks }) => {
+  const [activeBank, setActiveBank] = useState(banks[0]);
 
-    <div id="key-A" className="drum-pad">
-      <button className="purple">
-        <span>A</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
-    <div id="key-S" className="drum-pad">
-      <button className="purple">
-        <span>S</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
-    <div id="key-D" className="drum-pad">
-      <button className="purple">
-        <span>D</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
+  useEffect(() => {
+    // const [updatedActiveBank] = banks.filter(bank => bank.isActive);
+    // setActiveBank(updatedActiveBank);
+  }, [banks]);
 
-    <div id="key-Z" className="drum-pad">
-      <button className="blue">
-        <span>Z</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
+  return (
+    <div id="pad" className={isTurnedOn ? 'active' : ''}>
+      {activeBank.keys.map(({ id, keyTrigger, url }, i) => (
+        <div key={id} className="drum-pad">
+          <button className={(i > 5) ? 'blue' : (i > 2) ? 'purple' : 'cyan'}>
+            <span>{keyTrigger}</span>
+            <audio id={keyTrigger} className="clip" src={url}></audio>
+          </button>
+        </div>
+      ))}
     </div>
-    <div id="key-X" className="drum-pad">
-      <button className="blue">
-        <span>X</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
-    <div id="key-C" className="drum-pad">
-      <button className="blue">
-        <span>C</span>
-        <audio id="Q" className="clip" src=""></audio>
-      </button>
-    </div>
+  );
+};
 
-  </div>
-);
+Pad.propTyoes = {
+  isTurnedOn: PropTypes.bool.isRequired,
+  banks: PropTypes.array.isRequired,
+};
 
 export default Pad;

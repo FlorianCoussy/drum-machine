@@ -12,7 +12,7 @@
     margin: 10px;
     font: bold 40px sans-serif;
     color: $grey-8;
-    background: radial-gradient($white 0%, $grey-8 100%);
+    background: radial-gradient($grey-8 0%, $grey-6 100%);
     text-shadow: 0 1px 1px hsla(0, 0%, 100%, .25),
                  0 -1px 1px hsla(0, 0%, 25%, .75);
     box-shadow: inset 0 0 1px 2px hsla(0, 0%, 0%, .2),
@@ -45,29 +45,29 @@
       }
     }
 
-    &.active {
-      &.cyan {
-        color: $cyan-2;
-        background: radial-gradient($cyan-2 0%, $cyan-1 66%);
-      }
-
-      &.purple {
-        color: $purple-2;
-        background: radial-gradient($purple-2 0%, $purple-1 66%);
-      }
-
-      &.blue {
-        color: $blue-2;
-        background: radial-gradient($blue-2 0%, $blue-1 66%);
-      }
-    }
-
     span {
       position: inherit;
       top: auto;
       left: auto;
       font-size: inherit;
       font-weight: inherit;
+    }
+  }
+
+  &.active {
+    .cyan {
+      color: $cyan-2;
+      background: radial-gradient($cyan-2 0%, $cyan-1 66%);
+    }
+
+    .purple {
+      color: $purple-2;
+      background: radial-gradient($purple-2 0%, $purple-1 66%);
+    }
+
+    .blue {
+      color: $blue-2;
+      background: radial-gradient($blue-2 0%, $blue-1 66%);
     }
   }
 }
