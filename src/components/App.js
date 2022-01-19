@@ -7,7 +7,24 @@ import './App.scss';
 const App = () => {
   const [isTurnedOn, setIsTurnedOn] = useState(false);
   const [banks, setBanks] = useState(banksData);
+  const [activeBank, setActiveBank] = useState(banks[0]);
   const [currentKey, setCurrentKey] = useState(undefined);
+
+  const playKey = (key) => {
+    const { keyTrigger } = key;
+    const button = document.getElementById(keyTrigger);
+    button.currentTime = 0;
+    button.play();
+  };
+
+  const pressKeyboard = (e) => {
+    const { keyCode } = e;
+    const key = activeBank.keys.find(key => key.keyCode === keyCode);
+    if (key) {
+      setCurrentKey(key);
+      playKey(key);
+    }
+  };
 
   const handleIOButtonClick = () => setIsTurnedOn(!isTurnedOn);
 
@@ -21,6 +38,21 @@ const App = () => {
     setBanks(updatedBanks);
   };
 
+  const handlePadClick = (key) => {
+    if (isTurnedOn) {
+      setCurrentKey(key);
+      playKey(key);
+    }
+  };
+
+  useEffect(() => {
+    if (isTurnedOn) {
+      document.addEventListener('keydown', pressKeyboard);
+    }
+
+    return () => document.removeEventListener('keydown', pressKeyboard);
+  }, [isTurnedOn]);
+
   useEffect(() => {
     const updatedBanks = banks.map(bank => {
       return {
@@ -29,7 +61,16 @@ const App = () => {
       };
     });
     setBanks(updatedBanks);
+    setCurrentKey(undefined);
   }, [isTurnedOn]);
+
+  useEffect(() => {
+    const updatedActiveBank = banks.find(bank => bank.isActive);
+    if (updatedActiveBank && updatedActiveBank.id !== activeBank.id) {
+      setActiveBank(updatedActiveBank);
+      setCurrentKey(undefined);
+    }
+  }, [banks]);
 
   return (
     <div>
@@ -51,7 +92,8 @@ const App = () => {
                 <div className="col-8">
                   <Pad
                     isTurnedOn={isTurnedOn}
-                    banks={banks}
+                    bank={activeBank}
+                    handlePadClick={handlePadClick}
                   />
                 </div>
               </div>

@@ -9,6 +9,11 @@ const VolumeSlider = ({ isTurnedOn }) => {
     if (isTurnedOn) setVolume(currentTarget.value);
   };
 
+  useEffect(() => {
+    const clips = [...document.getElementsByClassName('clip')];
+    clips.forEach(clip => clip.volume = volume * 4 / 100);
+  }, [volume]);
+
   useEffect(() => isTurnedOn ? setVolume(15) : setVolume(0), [isTurnedOn]);
 
   return (

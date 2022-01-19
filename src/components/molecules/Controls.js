@@ -23,7 +23,7 @@ const Controls = ({
     </div>
     <PadNameDisplay
       isTurnedOn={isTurnedOn}
-      keyName={currentKey ? currentKey.name : undefined}
+      keyName={currentKey ? currentKey.id : undefined}
       keyTrigger={currentKey ? currentKey.keyTrigger : undefined}
     />
     <VolumeSlider isTurnedOn={isTurnedOn} />
